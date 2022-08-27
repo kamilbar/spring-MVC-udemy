@@ -4,7 +4,7 @@
     <title>Hello World Form!</title>
 </head>
 <body>
-    <form action="processFormVersionTwo" method="GET">
+    <form action="${pageContext.request.contextPath}/processFormVersionThree" method="GET">
         <input type="text" name="studentName"
                placeholder="What's your name?" />
         <input type="submit">
