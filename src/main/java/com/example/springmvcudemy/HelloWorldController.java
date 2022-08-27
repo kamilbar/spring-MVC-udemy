@@ -8,15 +8,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping("/hello")
 public class HelloWorldController {
 
     @RequestMapping("/showForm")
-    public String showForm(){
+    public String showForm() {
         return "helloworld-form";
     }
 
     @RequestMapping("/processForm")
-    public String processForm(){
+    public String processForm() {
         return "helloworld";
     }
 
@@ -29,10 +30,11 @@ public class HelloWorldController {
         model.addAttribute("message", result);
         return "helloworld";
     }
+
     @RequestMapping("/processFormVersionThree")
     public String processFormVerThree(
             @RequestParam("studentName") String name,
-            Model model){
+            Model model) {
 
         name = name.toUpperCase();
         String result = "Hey My Friend " + name + "!";
