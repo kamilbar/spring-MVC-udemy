@@ -1,5 +1,7 @@
 package com.example.springmvcudemy;
 
+import com.example.springmvcudemy.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -17,6 +19,8 @@ public class Customer {
     @Pattern(regexp = "^[0-9]{2}-[0-9]{3}", message = "only XX-XXX type")
     private String postalCode;
 
+    @CourseCode(value = "TOPS", message = "should start with 'TOPS'")
+    private String courseCode;
 
 
     public String getFirstName() {
@@ -49,5 +53,13 @@ public class Customer {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
